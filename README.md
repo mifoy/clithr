@@ -1,12 +1,40 @@
 # clithr
-A simple weather cli tools made in c++ with a cache 
 
-# Requirements
-- Linux 6.18 or later
-- gcc version 13.3.0 or later
+A simple weather CLI tool made in C++ with a cache.
 
-# How to use
-Download dependencies debian ```sudo apt install libcurl4-openssl-dev nlohmann-json3-dev``` 
-Compile ```g++ -std=c++17 main.cpp -o clithr -lcurl -Wall```
-simply execute ```./clithr <city> ```
+## Requirements
 
+* g++ (C++17 support, GCC 13+ recommended)
+* An [OpenWeatherMap](https://openweathermap.org/api) API key
+
+## Installation
+
+### Debian/Ubuntu
+
+Install dependencies:
+\`\`\`bash
+sudo apt install libcurl4-openssl-dev nlohmann-json3-dev
+\`\`\`
+
+Create a `.env` file in the project root with your API key:
+\`\`\`
+OWM_API_KEY=your_api_key_here
+\`\`\`
+
+Compile:
+\`\`\`bash
+g++ -std=c++17 main.cpp -o clithr -lcurl -Wall
+\`\`\`
+
+## Usage
+
+\`\`\`bash
+./clithr <city>
+\`\`\`
+
+Example:
+\`\`\`bash
+./clithr paris
+\`\`\`
+
+Results are cached for 60 seconds to avoid hitting the API repeatedly for the same city.
