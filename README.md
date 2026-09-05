@@ -12,29 +12,29 @@ A simple weather CLI tool made in C++ with a cache.
 ### Debian/Ubuntu
 
 Install dependencies:
-\`\`\`bash
+```bash
 sudo apt install libcurl4-openssl-dev nlohmann-json3-dev
-\`\`\`
+```
 
 Create a `.env` file in the project root with your API key:
-\`\`\`
+```
 OWM_API_KEY=your_api_key_here
-\`\`\`
+```
 
 Compile:
-\`\`\`bash
+```bash
 g++ -std=c++17 main.cpp -o clithr -lcurl -Wall
-\`\`\`
+```
 
 ## Usage
 
-\`\`\`bash
+```bash
 ./clithr <city>
-\`\`\`
+```
 
 Example:
-\`\`\`bash
+```bash
 ./clithr paris
-\`\`\`
+```
 
 Results are cached for 60 seconds to avoid hitting the API repeatedly for the same city.
